@@ -6,6 +6,6 @@ $ npm install node-jsonp-client
 
 Include the library on Node.js
 
+````javascript
 const jsonpClient = require('node-jsonp-client');
-
 jsonpClient('http://yourapi').then(console.log)
