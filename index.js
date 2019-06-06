@@ -23,9 +23,9 @@ module.exports = async function jsonpClient(url) {
     sandbox: {
       [callbackName](data) {
         try {
-          return JSON.stringify(data)
+          return data
         } catch (error) {
-          return data.toString()
+          return data
         }
       }
     }
