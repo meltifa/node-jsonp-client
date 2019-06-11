@@ -1,8 +1,8 @@
 const { VM } = require('vm2')
 const fetch = require('node-fetch')
 
-module.exports = async function jsonpClient(url) {
-  const resBody = await fetch(url).then(res => res.text())
+module.exports = async function jsonpClient(url, options = {}) {
+  const resBody = await fetch(url, options).then(res => res.text())
   const callbackNameReg = /^([$\w_][\d\w_$]+)\(/
   const jsonpStartReg = /^\(/
   const jsonpEndReg = /\);?$/m
