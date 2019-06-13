@@ -16,7 +16,11 @@ module.exports = async function jsonpClient(url, options = {}) {
     callbackName = 'jsonp_' + Date.now().toString()
     jsonp = callbackName + jsonp
   } else {
-    return resBody
+    try {
+      return JSON.parse(resBody)
+    } catch (error) {
+      return resBody
+    }
   }
   const vm = new VM({
     timeout: 1000,
