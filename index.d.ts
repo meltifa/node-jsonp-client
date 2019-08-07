@@ -1,2 +1,2 @@
-declare function jsonpClient(url: string): Promise<string>;
+declare function jsonpClient(url: string): Promise<any>;
 export = jsonpClient;
